@@ -30,7 +30,7 @@ public class DatabaseResource {
 		return supportedDatabases;
 	}
 	
-	@RequestMapping(value="/db/test",
+	@RequestMapping(value="/test",
 			method = RequestMethod.POST)
 	public Health testDB(@RequestBody DBConfig dbconfig) {
 		HikariConfig config = new HikariConfig();
