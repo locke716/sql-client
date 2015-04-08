@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head ng-controller="HelloController">
+<meta charset="ISO-8859-1">
+<title>{{helloTo.title}}</title>
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cyborg/bootstrap.min.css">
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation" bs-navbar>
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">SQL Client</a>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<button type="button"
+				class="btn btn-primary col-md-4 col-md-offset-4"
+				ng-click="pushTab()">Add Database</button>
+		</div>
+		<div id="tabs" class="row-fluid" >
+			<div bs-active-pane="tabs.activeTab" bs-tabs>
+				<div id="db"></div>
+				<div id="sql"></div>
+				<div id="sqlresults"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		angular.module("myapp", [ 'mgcrea.ngStrap' ]).controller(
+				"HelloController", function($scope) {
+					$scope.helloTo = {};
+					$scope.helloTo.title = "SQL Client";
+				});
+	</script>
+</body>
+</html>
